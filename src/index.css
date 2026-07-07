@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "Manrope", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* IE, Edge */
+.no-scrollbar {
+  -ms-overflow-style: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GLASS UTILITIES — Use independently or combine them
+   Requires: the element must have position: relative and a border-radius
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. Glass Border — corner accent lines (top-left ↔ bottom-right) ── */
+.glass-border {
+  position: relative;
+}
+
+.glass-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.15) 15%,
+    /* transparent 55%, */
+    /* transparent 0%, */
+    rgba(255, 255, 255, 0.15) 95%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.glass-border:hover::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.2) 14%,
+    transparent 30%,
+    transparent 70%,
+    rgba(255, 255, 255, 0.2) 86%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+}
+
+/* ── 2. Glass Background — frosted glass with sheen ── */
+.glass-bg {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 5%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  backdrop-filter: blur(2px) saturate(80%);
+  /* -webkit-backdrop-filter: blur(28px) saturate(180%); */
+  border: none;
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.05),
+    0 8px 32px 0 rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.35s ease;
+}
+
+.glass-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 255, 255, 0.015) 30%,
+    transparent 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-bg:hover {
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 0 40px 0 rgba(255, 255, 255, 0.02),
+    0 12px 44px 0 rgba(0, 0, 0, 0.35);
+}
+
+
+@keyframes popIn{
+  0%{
+    opacity:0;
+    transform:translateY(40px) scale(.4);
+  }
+
+  60%{
+    opacity:1;
+    transform:translateY(-8px) scale(1.08);
+  }
+
+  80%{
+    transform:translateY(4px) scale(.98);
+  }
+
+  100%{
+    transform:translateY(0) scale(1);
+  }
+}
+
+.animate-popIn{
+  animation:popIn .65s cubic-bezier(.22,1,.36,1);
+}
+
+.portfolio-track {
+  width: max-content;
+  animation: marquee 22s linear infinite;
+  will-change: transform;
+}
+
+.portfolio-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(calc(-50% - 10px), 0, 0);
+  }
+}
