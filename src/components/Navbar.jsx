@@ -1,6 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Assets from "../assets/Assets";
+import { HamburgerIcon } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 const Navbar = () => {
   const navItems = [
@@ -38,11 +40,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 lg:px-62 backdrop-blur-[5px] transition-all duration-100
-    ${isScrolled ? "pt-4 pb-2" : "pt-8"}
-    `}>
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 px-4 lg:px-62 backdrop-blur-[5px] transition-all duration-100
+    ${isScrolled ? "pt-4 pb-2" : "pt-6 lg:pt-8"}
+    `}
+    >
       <div className=" flex items-center justify-between ">
-        <div className="logo h-18 w-auto">
+        <div className="logo h-11 lg:h-18 w-auto">
           <img
             className="h-full w-full"
             src={Assets.TechzunoLogo}
@@ -66,9 +70,16 @@ const Navbar = () => {
         </div>
 
         {/* CTA Button — glass pill */}
-        <button className="glass-border glass-bg px-5 py-2.5 rounded-[48px] text-white text-[13px] font-medium tracking-wide cursor-pointer">
+        <button className="glass-border glass-bg hidden md:flex px-5 py-2.5 rounded-[48px] text-white text-[13px] font-medium tracking-wide cursor-pointer">
           Book a Consultation
         </button>
+
+        <div className="border p-1 border-white/20 bg-white/10 rounded-full md:hidden">
+          <Icon
+            icon="material-symbols-light:menu"
+            className="h-5 w-5 text-white"
+          />
+        </div>
       </div>
     </nav>
   );

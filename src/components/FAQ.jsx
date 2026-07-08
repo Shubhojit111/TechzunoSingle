@@ -45,7 +45,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-24 w-full  relative px-62">
+    <section className="py-24 w-full  relative px-5 lg:px-62">
       <div className="w-full text-center ">
         <GlowHeaderBtn text={<>FAQ</>} additionalClassName="text-[50px]" />
 
@@ -56,21 +56,21 @@ const FAQ = () => {
               className="glass-bg glass-border rounded-2xl overflow-hidden "
             >
               <button
-                className="w-full px-8 py-5 flex justify-between cursor-pointer items-center focus:outline-none transition-colors"
+                className="w-full px-4 lg:px-8 py-3 lg:py-5 flex justify-between cursor-pointer items-center focus:outline-none transition-colors"
                 onClick={() => setActiveIndex(activeIndex === idx ? -1 : idx)}
               >
-                <span className="text-left font-normal text-[22px] text-white/90 tracking-wide">
+                <span className="text-left font-normal text-[18px] lg:text-[22px] text-white/90 tracking-wide">
                   {faq.question}
                 </span>
                 <Icon
-                  icon="weui:arrow-outlined" fontSize={40}
-                  className={` h-10 w-auto text-white/70 transform transition-transform duration-300 ${activeIndex === idx ? "rotate-270" : "rotate-90"}`}
+                  icon="weui:arrow-outlined"
+                  className={` h-6 lg:h-10 w-auto text-white/70 transform transition-transform duration-300 ${activeIndex === idx ? "rotate-270" : "rotate-90"}`}
                 />
               </button>
               <div
-                className={`px-8 overflow-hidden transition-all duration-300 ease-in-out ${activeIndex === idx ? "max-h-40 py-2 pb-6 opacity-100" : "max-h-0 opacity-0"}`}
+                className={`px-4 lg:px-8 max-w-[85%] overflow-hidden transition-all duration-300 ease-in-out ${activeIndex === idx ? "max-h-40 py-2 pb-6 opacity-100" : "max-h-0 opacity-0"}`}
               >
-                <p className=" text-left text-white/50 text-[18px] tracking-wide">
+                <p className=" text-left text-white/50 text-[14px] lg:text-[18px] tracking-wide">
                   {faq.answer}
                 </p>
               </div>

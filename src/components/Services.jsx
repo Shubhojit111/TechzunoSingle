@@ -38,14 +38,14 @@ const Services = () => {
 
   return (
     <section className="pb-24 relative">
-      <div className="mx-auto w-full text-center px-62">
+      <div className="mx-auto w-full text-center px-4 lg:px-62">
         <GlowHeaderBtn text="Our Services" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-15">
           {servicesList.map((service, idx) => (
             <div
               key={idx}
-              className="relative group overflow-hidden rounded-2xl lg:h-[392px] flex items-end "
+              className="relative group overflow-hidden rounded-2xl h-[380px] border lg:h-[392px] flex items-end"
             >
               <div className="h-full w-full absolute top-0 left-0 z-10">
                 <img
@@ -55,13 +55,13 @@ const Services = () => {
               />
               </div>
 
-              <div className="z-20 max-h-1/2 h-1/2 w-full backdrop-blur-[5px]  flex flex-col py-4 px-8 text-center rounded-2xl">
-                <h3 className="text-[19px] font-bold text-white mb-1.5">
+              <div className="z-20 h-[55%] lg:h-1/2 w-full backdrop-blur-[5px]  flex flex-col py-3 px-8 text-center rounded-2xl">
+                <h3 className="text-[22px] lg:text-[19px] font-bold text-white mb-2.5">
                   {service.title}
                 </h3>
-                <p className="text-slate-300 text-[13px] mb-4.5 px-6">{service.desc}</p>
+                <p className="text-slate-300 text-[18px] lg:text-[13px] mb-4.5 px-6 line-clamp-3">{service.desc}</p>
                 <div>
-                  <button className="px-5 py-2 rounded-full bg-white text-black text-xs tracking-wider cursor-pointer  hover:bg-[#00B5B5] hover:text-white transition-colors font-medium">
+                  <button className="px-5 py-2 rounded-full bg-white text-black lg:text-xs tracking-wider cursor-pointer  hover:bg-[#00B5B5] hover:text-white transition-colors font-medium">
                     Book Your Call
                   </button>
                 </div>

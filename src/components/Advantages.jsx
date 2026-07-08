@@ -26,13 +26,13 @@ const Advantages = () => {
         {/* Pixel-perfect badge for "Our Unfair Advantage" */}
         <div className="flex justify-center mb-8">
           <div
-            className="px-12 py-1.5"
+            className="px-20 lg:px-12 py-3 lg:py-1.5"
             style={{
               background:
                 "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 100%)",
             }}
           >
-            <span className="text-white text-[16px] font-normal tracking-wide">
+            <span className="text-white text-[18px] lg:text-[16px] font-normal tracking-wide">
               Our Unfair Advantage
             </span>
           </div>
@@ -41,8 +41,10 @@ const Advantages = () => {
         <GlowHeaderBtn
           text={
             <>
-              What We Provide That
-              <br />
+              What We Provide
+              <br className="block lg:hidden" />
+              That
+              <br className="hidden lg:block" />
               Others Don't
             </>
           }
@@ -55,13 +57,13 @@ const Advantages = () => {
                 key={adv.id}
                 className="flex flex-col items-center group px-8"
               >
-                <div className="text-8xl md:text-[250px] font-black text-transparent bg-clip-text bg-linear-to-b from-white to-[#015E57] leading-none mb-1 group-hover:scale-110 transition-transform duration-500">
+                <div className="text-[200px] md:text-[250px] font-black text-transparent bg-clip-text bg-linear-to-b from-white to-[#015E57] leading-none mb-1 group-hover:scale-110 transition-transform duration-500">
                   {adv.id}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-1">
+                <h3 className="text-[22px] lg:text-[20px] font-bold text-white mb-1">
                   {adv.title}
                 </h3>
-                <p className="text-white/80 text-[14px] leading-normal mx-auto">
+                <p className="text-white/80 text-[18px] lg:text-[14px] leading-normal mx-auto line-clamp-4 lg:line-clamp-none">
                   {adv.desc}
                 </p>
               </div>
@@ -69,7 +71,7 @@ const Advantages = () => {
           })}
         </div>
         <div className="mx-auto pt-16">
-          <button className="px-5 py-2 rounded-full font-semibold bg-white text-black text-xs cursor-pointer tracking-wider hover:bg-[#00B5B5] hover:text-white transition-colors">
+          <button className="px-5 py-2 rounded-full bg-white text-black lg:text-xs tracking-wider cursor-pointer  hover:bg-[#00B5B5] hover:text-white transition-colors font-medium">
             Book Your Call
           </button>
         </div>

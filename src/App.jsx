@@ -17,13 +17,13 @@ const App = () => {
       <Hero />
       <Services />
       <Advantages />
-      {/* 
-      */} 
       <Portfolio />
       <FAQ />
-      {/* <Footer />  */}
-      <Footer />
       {/* 
+      */} 
+      {/* <Footer />  */}
+      {/* 
+      <Footer />
       */} 
     </div>
   );
