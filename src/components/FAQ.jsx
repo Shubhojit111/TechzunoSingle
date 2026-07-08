@@ -56,7 +56,7 @@ const FAQ = () => {
               className="glass-bg glass-border rounded-2xl overflow-hidden "
             >
               <button
-                className="w-full px-8 py-5 flex justify-between items-center focus:outline-none transition-colors"
+                className="w-full px-8 py-5 flex justify-between cursor-pointer items-center focus:outline-none transition-colors"
                 onClick={() => setActiveIndex(activeIndex === idx ? -1 : idx)}
               >
                 <span className="text-left font-normal text-[22px] text-white/90 tracking-wide">

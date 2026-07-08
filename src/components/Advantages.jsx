@@ -69,7 +69,7 @@ const Advantages = () => {
           })}
         </div>
         <div className="mx-auto pt-16">
-          <button className="px-5 py-2 rounded-full font-semibold bg-white text-black text-xs tracking-wider hover:bg-cyan-400 hover:text-white transition-colors">
+          <button className="px-5 py-2 rounded-full font-semibold bg-white text-black text-xs cursor-pointer tracking-wider hover:bg-[#00B5B5] hover:text-white transition-colors">
             Book Your Call
           </button>
         </div>

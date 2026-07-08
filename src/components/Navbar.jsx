@@ -9,20 +9,20 @@ const Navbar = () => {
       link: "/",
     },
     {
-      name: "Products",
-      link: "/products",
+      name: "Services",
+      link: "/services",
     },
     {
-      name: "Pricing",
-      link: "/pricing",
+      name: "Advantages",
+      link: "/advantages",
     },
     {
-      name: "Blog",
-      link: "/blog",
+      name: "Portfolio",
+      link: "/portfolio",
     },
     {
-      name: "Contact",
-      link: "/contact",
+      name: "F&Q",
+      link: "/faq",
     },
   ];
 
@@ -39,7 +39,7 @@ const Navbar = () => {
   }, []);
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 lg:px-62 backdrop-blur-[5px] transition-all duration-100
-    ${isScrolled ? "pt-4 pb-2" : "pt-10"}
+    ${isScrolled ? "pt-4 pb-2" : "pt-8"}
     `}>
       <div className=" flex items-center justify-between ">
         <div className="logo h-18 w-auto">
@@ -66,7 +66,7 @@ const Navbar = () => {
         </div>
 
         {/* CTA Button — glass pill */}
-        <button className="glass-border glass-bg px-5 py-2.5 rounded-[48px] text-white text-[13px] font-medium tracking-wide">
+        <button className="glass-border glass-bg px-5 py-2.5 rounded-[48px] text-white text-[13px] font-medium tracking-wide cursor-pointer">
           Book a Consultation
         </button>
       </div>

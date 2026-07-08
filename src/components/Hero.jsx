@@ -48,14 +48,14 @@ const Hero = () => {
           Seamless, scalable &amp; responsive digital solutions tailored to your
           unique needs <br /> using modern tech stacks.
         </p>
-        <button className="glass-border glass-bg px-7 py-4 rounded-[48px] ">
+        <button className="glass-border glass-bg px-7 py-4 cursor-pointer rounded-[48px] ">
             <span className="text-[14px] md:text-[20px] f text-white tracking-[0.04rem]">
               Schedule Your Free Consultation
             </span>
         </button>
       </div>
 
-      <div className="hero bottom mt-30 z-0  relative">
+      <div className="hero bottom mt-32 z-0  relative">
         <img src={Assets.HeroFooter} alt="hero-mockup" />
         {/* <div className="absolute bottom-0 left-0 w-full border h-[30%] bg-linear-to-right from-transparent via-black/5 via-black/60 to-black/95"></div> */}
       </div>

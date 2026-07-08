@@ -26,6 +26,7 @@ export default function ScrollToTopBtn() {
       onClick={scrollToTop}
       className={`
         fixed
+        cursor-pointer
         bottom-8
         animate-popIn
         right-8

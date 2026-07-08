@@ -5,8 +5,9 @@ import Services from './components/Services';
 import Advantages from './components/Advantages';
 import Portfolio from './components/Portfolio';
 import FAQ from './components/FAQ';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import ScrollToTopBtn from './components/ScrollToTopBtn';
+import Footer from '../Footer';
 
 const App = () => {
   return (
@@ -17,11 +18,12 @@ const App = () => {
       <Services />
       <Advantages />
       {/* 
+      */} 
       <Portfolio />
       <FAQ />
-      */} 
+      {/* <Footer />  */}
+      <Footer />
       {/* 
-      <Footer /> 
       */} 
     </div>
   );
