@@ -12,7 +12,7 @@ import { GravityStarsBackground } from "./components/ui/GravityStarsBackground";
 const App = () => {
   return (
     <div className="min-h-screen relative text-white">
-      {/* <GravityStarsBackground className="fixed inset-0 -z-50 pointer-events-none" /> */}
+      <GravityStarsBackground className="fixed inset-0 -z-50 pointer-events-none" />
       <ScrollToTopBtn />
       <Navbar />
       <Hero />

@@ -153,7 +153,7 @@ const Advantages = () => {
             return (
               <div
                 key={adv.id}
-                className="flex flex-col items-center group px-16 lg:px-5 opacity-0"
+                className="flex flex-col items-center group px-16 lg:px-7 opacity-0"
               >
                 <div
                   className="text-[160px] md:text-[250px] font-extrabold text-transparent bg-clip-text bg-linear-to-b from-white to-[#015E57] leading-none mb-1 group-hover:scale-110 transition-transform duration-500"

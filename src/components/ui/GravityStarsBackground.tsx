@@ -35,13 +35,13 @@ type Particle = {
 };
 
 function GravityStarsBackground({
-  starsCount = 75,
+  starsCount = 500,
   starsSize = 2,
   starsOpacity = 0.75,
   glowIntensity = 15,
   glowAnimation = 'ease',
   movementSpeed = 0.3,
-  mouseInfluence = 100,
+  mouseInfluence = 150,
   mouseGravity = 'attract',
   gravityStrength = 75,
   starsInteraction = false,

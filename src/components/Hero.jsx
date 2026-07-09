@@ -141,7 +141,7 @@ const Hero = () => {
           </h1>
           <p
             ref={descRef}
-            className="text-white tracking-wide text-lg md:text-[16px] mx-auto mb-8 lg:mb-12 font-light opacity-0"
+            className="text-white tracking-wide text-lg md:text-[16px] mx-auto mb-8 lg:mb-10 font-light opacity-0"
           >
             Techzuno Solutions transforms your complex ideas into fast, scalable
             digital <br className="hidden md:block" /> realities{" "}
@@ -151,9 +151,9 @@ const Hero = () => {
           </p>
           <button
             ref={btnRef}
-            className="glass-border glass-bg px-7 py-4 cursor-pointer rounded-[48px] opacity-0"
+            className="glass-border glass-bg px-7 py-4.5 cursor-pointer rounded-[48px] opacity-0"
           >
-            <span className="text-[16px] md:text-[20px] f text-white tracking-[0.04rem]">
+            <span className="text-[16px] md:text-[19px] f text-white tracking-[0.04rem]">
               Schedule Your Free Consultation
             </span>
           </button>
