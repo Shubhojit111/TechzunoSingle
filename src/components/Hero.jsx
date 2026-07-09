@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Assets from "../assets/Assets";
 import GlowHeaderBtn from "./GlowHeaderBtn";
 import { User2 } from "lucide-react";
 import { Icon } from "@iconify/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const features = [
@@ -26,6 +30,88 @@ const Hero = () => {
     },
   ];
 
+  const titleRef = useRef(null);
+  const descRef = useRef(null);
+  const btnRef = useRef(null);
+  const mockupRef = useRef(null);
+  const whyHeaderRef = useRef(null);
+  const featuresRef = useRef(null);
+
+  useEffect(() => {
+    // Initial mount animations for hero elements
+    const heroTimeline = gsap.timeline();
+    heroTimeline
+      .fromTo(
+        titleRef.current,
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power2.out" }
+      )
+      .fromTo(
+        descRef.current,
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+        "-=0.6"
+      )
+      .fromTo(
+        btnRef.current,
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+        "-=0.6"
+      )
+      .fromTo(
+        mockupRef.current,
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+      );
+
+    // Why Techzuno Header ScrollTrigger
+    const whyHeaderCtx = gsap.context(() => {
+      gsap.fromTo(
+        whyHeaderRef.current,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: whyHeaderRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    // Features staggered ScrollTrigger
+    const featuresCtx = gsap.context(() => {
+      if (featuresRef.current) {
+        gsap.fromTo(
+          featuresRef.current.children,
+          { y: 45, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: featuresRef.current,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }
+    });
+
+    return () => {
+      heroTimeline.kill();
+      whyHeaderCtx.revert();
+      featuresCtx.revert();
+    };
+  }, []);
+
   return (
     <>
       <section
@@ -35,33 +121,52 @@ const Hero = () => {
         <div className="hero-bg absolute bottom-0 lg:top-0 z-0">
           <img src={Assets.HeroBg} alt="hero-bg" />
         </div>
-        
+
         <div className="hero-bg h-full w-full absolute md:hidden z-0">
-          <img src={Assets.HeroBgMobile} alt="hero-bg" className="w-full h-full object-cover"/>
+          <img
+            src={Assets.HeroBgMobile}
+            alt="hero-bg"
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 h-full w-full mx-auto px-4 lg:px-62  text-center pt-28 lg:pt-48">
-          <h1 className="text-[37px] md:text-5xl lg:text-[54px] text-white mb-5 leading-[1.4] tracking-[0.08rem] ">
+          <h1
+            ref={titleRef}
+            className="text-[37px] md:text-5xl lg:text-[54px] text-white mb-5 leading-[1.4] tracking-[0.08rem] opacity-0"
+          >
             BUILD HIGH-PERFORMANCE WEB & APP
             <br /> SOLUTIONS WITH REACT &amp; NEXT.JS.
           </h1>
-          <p className="text-white tracking-wide text-lg md:text-[16px] mx-auto mb-8 lg:mb-12 font-light">
+          <p
+            ref={descRef}
+            className="text-white tracking-wide text-lg md:text-[16px] mx-auto mb-8 lg:mb-12 font-light opacity-0"
+          >
             Techzuno Solutions transforms your complex ideas into fast, scalable
             digital <br className="hidden md:block" /> realities{" "}
             <span className="hidden md:inline-block">
               using React, Next.js, Python, Shopify, and WordPress.
             </span>
           </p>
-          <button className="glass-border glass-bg px-7 py-4 cursor-pointer rounded-[48px] ">
+          <button
+            ref={btnRef}
+            className="glass-border glass-bg px-7 py-4 cursor-pointer rounded-[48px] opacity-0"
+          >
             <span className="text-[16px] md:text-[20px] f text-white tracking-[0.04rem]">
               Schedule Your Free Consultation
             </span>
           </button>
         </div>
 
-        <div className="hero mt-10 -mb-8 sm:mb-0 lg:mt-32  z-0  relative">
-          <img src={Assets.G505} alt="hero-mockup" />
+        <div
+          ref={mockupRef}
+          className="hero mt-10 -mb-8 sm:mb-0 lg:mt-32 z-0 relative perspective-1000 opacity-0"
+        >
+          <img
+            src={Assets.G505}
+            alt="hero-mockup"
+          />
           {/* <div className="absolute bottom-0 left-0 w-full border h-[30%] bg-linear-to-right from-transparent via-black/5 via-black/60 to-black/95"></div> */}
         </div>
       </section>
@@ -71,16 +176,21 @@ const Hero = () => {
         className="mt-20 lg:-mt-24 pb-22 relative px-5 lg:px-62 "
       >
         <div className="mx-auto w-full text-center">
-          <GlowHeaderBtn
-            text={"Why Techzuno?"}
-            additionalClassName="mb-8 lg:mb-14"
-          />
+          <div ref={whyHeaderRef} className="opacity-0">
+            <GlowHeaderBtn
+              text={"Why Techzuno?"}
+              additionalClassName="mb-8 lg:mb-14"
+            />
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div
+            ref={featuresRef}
+            className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          >
             {features.map((feature, idx) => (
               <div
                 key={idx}
-                className=" relative bg-linear-to-b from-[#223232] to-[#000A0B] glass-border rounded-[16px] h-full w-full hover:-translate-y-2 transition-transform duration-300 "
+                className=" relative bg-linear-to-b from-[#223232] to-[#000A0B] glass-border rounded-[16px] h-full w-full hover:-translate-y-2 transition-transform duration-300 opacity-0"
               >
                 {/* <div className="absolute rounded-xl top-0 left-0 -z-10 h-full w-full ">
                   <img

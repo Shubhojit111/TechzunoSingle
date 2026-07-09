@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import GlowHeaderBtn from "./GlowHeaderBtn";
 import Assets from "../assets/Assets";
 import BookYouCallBtn from "./BookYouCallBtn";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
   const servicesList = [
@@ -37,30 +41,88 @@ const Services = () => {
     },
   ];
 
-  return (
-    <section className="pb-16 relative">
-      <div className="mx-auto w-full text-center px-5 lg:px-62">
-        <GlowHeaderBtn text="Our Services" />
+  const headerRef = useRef(null);
+  const cardsContainerRef = useRef(null);
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
+  useEffect(() => {
+    // Header reveal animation
+    const headerCtx = gsap.context(() => {
+      gsap.fromTo(
+        headerRef.current,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    // Staggered cards reveal animation
+    const cardsCtx = gsap.context(() => {
+      if (cardsContainerRef.current) {
+        gsap.fromTo(
+          cardsContainerRef.current.children,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.12,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: cardsContainerRef.current,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }
+    });
+
+    return () => {
+      headerCtx.revert();
+      cardsCtx.revert();
+    };
+  }, []);
+
+  return (
+    <section id="services" className="pb-16 relative">
+      <div className="mx-auto w-full text-center px-5 lg:px-62">
+        <div ref={headerRef} className="opacity-0">
+          <GlowHeaderBtn text="Our Services" />
+        </div>
+
+        <div
+          ref={cardsContainerRef}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10"
+        >
           {servicesList.map((service, idx) => (
             <div
               key={idx}
-              className="relative group overflow-hidden rounded-2xl h-[380px] border lg:h-[392px] flex items-end"
+              className="relative group overflow-hidden rounded-2xl h-[380px] border lg:h-[392px] flex items-end opacity-0"
             >
               <div className="h-full w-full absolute top-0 left-0 z-10">
                 <img
-                src={service.img}
-                alt={service.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 "
-              />
+                  src={service.img}
+                  alt={service.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 "
+                />
               </div>
 
               <div className="z-20 h-[55%] lg:h-[50%] w-full backdrop-blur-[3px]  flex flex-col pt-2 pb-3 lg:pt-4 px-8 text-center ">
                 <h3 className="text-[22px] lg:text-[19px] font-bold text-white mb-2.5">
                   {service.title}
                 </h3>
-                <p className="text-slate-300 text-[18px] lg:text-[13px] mb-4.5 px-6 line-clamp-3">{service.desc}</p>
+                <p className="text-slate-300 text-[18px] lg:text-[13px] mb-4.5 px-6 line-clamp-3">
+                  {service.desc}
+                </p>
                 <div>
                   <BookYouCallBtn />
                 </div>

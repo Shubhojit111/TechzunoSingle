@@ -45,7 +45,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-12 w-full relative px-5 lg:px-62">
+    <section id="faq" className="py-12 w-full relative px-5 lg:px-62">
       <div className="w-full text-center ">
         <GlowHeaderBtn text={<>FAQ</>} />
 

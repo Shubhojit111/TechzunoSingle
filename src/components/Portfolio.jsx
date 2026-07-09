@@ -24,7 +24,7 @@ const Portfolio = () => {
   const duplicatedPortfolio = [...portfolioItems, ...portfolioItems];
 
   return (
-    <section className=" h-fit sm:h-[55vh] relative lg:mt-12 ">
+    <section id="portfolio" className=" h-fit sm:h-[55vh] relative lg:mt-12 ">
       <div className="h-full relative">
         <div className="absolute top-0 left-0 w-full h-full ">
           <img
