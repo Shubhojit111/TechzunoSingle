@@ -1,6 +1,7 @@
 import React from "react";
 import GlowHeaderBtn from "./GlowHeaderBtn";
 import Assets from "../assets/Assets";
+import BookYouCallBtn from "./BookYouCallBtn";
 
 const Services = () => {
   const servicesList = [
@@ -55,13 +56,13 @@ const Services = () => {
               />
               </div>
 
-              <div className="z-20 h-[55%] lg:h-1/2 w-full backdrop-blur-[5px]  flex flex-col pt-2 pb-3 px-8 text-center ">
+              <div className="z-20 h-[55%] lg:h-[50%] w-full backdrop-blur-[3px]  flex flex-col pt-2 pb-3 lg:pt-4 px-8 text-center ">
                 <h3 className="text-[22px] lg:text-[19px] font-bold text-white mb-2.5">
                   {service.title}
                 </h3>
                 <p className="text-slate-300 text-[18px] lg:text-[13px] mb-4.5 px-6 line-clamp-3">{service.desc}</p>
                 <div>
-                  
+                  <BookYouCallBtn />
                 </div>
               </div>
             </div>

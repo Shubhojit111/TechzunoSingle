@@ -42,8 +42,7 @@ const Advantages = () => {
         <GlowHeaderBtn
           text={
             <>
-              What We Provide
-              <br className="block lg:hidden" />
+              What We Provide <br className="block lg:hidden" />
               That <br className="hidden lg:block" />
               Others Don't
             </>
@@ -55,12 +54,13 @@ const Advantages = () => {
             return (
               <div
                 key={adv.id}
-                className="flex flex-col items-center group px-16 lg:px-8"
+              className="flex flex-col items-center group px-16 lg:px-5"
               >
-                <div className="text-[160px] md:text-[250px] font-black text-transparent bg-clip-text bg-linear-to-b from-white to-[#015E57] leading-none mb-1 group-hover:scale-110 transition-transform duration-500">
+                <div className="text-[160px] md:text-[250px] font-extrabold text-transparent bg-clip-text bg-linear-to-b from-white to-[#015E57] leading-none mb-1 group-hover:scale-110 transition-transform duration-500"
+                style={{ fontFamily: 'Arial, sans-serif' }}>
                   {adv.id}
                 </div>
-                <h3 className="text-[22px] lg:text-[20px] font-bold text-white mb-1">
+                <h3 className="text-[22px] lg:text-[20px] font-bold text-white mb-2">
                   {adv.title}
                 </h3>
                 <p className="text-white/80 text-[18px] lg:text-[14px] leading-normal mx-auto line-clamp-4 lg:line-clamp-none ">

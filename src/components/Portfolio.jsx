@@ -24,8 +24,7 @@ const Portfolio = () => {
   const duplicatedPortfolio = [...portfolioItems, ...portfolioItems];
 
   return (
-    <section className=" h-fit sm:h-[55vh] relative mt-8 lg:mt-12 ">
-      
+    <section className=" h-fit sm:h-[55vh] relative lg:mt-12 ">
       <div className="h-full relative">
         <div className="absolute top-0 left-0 w-full h-full ">
           <img
@@ -36,7 +35,7 @@ const Portfolio = () => {
         </div>
 
         <div className="mx-auto relative z-10 h-full flex flex-col sm:flex-row gap- sm:gap-14">
-          <div className="min-w-[30%] w-full text-center lg:w-[30%] h-full  items-center justify-end  ">
+          <div className="min-w-[30%] flex lg:justify-end justify-center w-full text-center lg:w-[30%] h-full ">
             <GlowHeaderBtn
               text={
                 <>
@@ -45,7 +44,7 @@ const Portfolio = () => {
                   Portfolio
                 </>
               }
-              additionalClassName="lg:text-[50px]"
+              additionalClassName="lg:text-[44px]"
             />
           </div>
 
@@ -55,13 +54,13 @@ const Portfolio = () => {
                 return (
                   <div
                     key={id}
-                    className=" glass-border glass-bg w-[150px] lg:w-[420px] my-6 lg:my-10 rounded-2xl sm:rounded-3xl flex items-center justify-center overflow-hidden p-3 lg:p-6 shrink-0"
+                    className=" glass-border glass-bg w-[150px] lg:h-[340px] lg:w-[420px] my-6 lg:my-10 rounded-2xl sm:rounded-[26px] flex items-center justify-center overflow-hidden p-3 lg:p-6 shrink-0"
                   >
-                    <div className="rounded-xl sm:rounded-3xl overflow-hidden  relative">
+                    <div className="rounded-xl sm:rounded-2xl overflow-hidden h-full w-full relative ">
                       <img
                         src={items.image}
                         alt={items.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   </div>

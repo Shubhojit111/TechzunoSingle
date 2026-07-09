@@ -45,15 +45,15 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-24 w-full  relative px-5 lg:px-62">
+    <section className="py-12 w-full relative px-5 lg:px-62">
       <div className="w-full text-center ">
         <GlowHeaderBtn text={<>FAQ</>} />
 
-        <div className="space-y-3 mt-10">
+        <div className="space-y-3 mt-6">
           {faqs.map((faq, idx) => (
             <div
               key={idx}
-              className="glass-bg glass-border rounded-2xl overflow-hidden "
+              className="glass-bg glass-border rounded-[20px] overflow-hidden "
             >
               <button
                 className="w-full px-4 lg:px-8 py-3 lg:py-5 flex justify-between cursor-pointer items-center focus:outline-none transition-colors"

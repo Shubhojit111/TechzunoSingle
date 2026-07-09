@@ -21,7 +21,7 @@ const App = () => {
       <FAQ />
       {/* 
       */} 
-      {/* <Footer />  */}
+      <Footer /> 
       {/* 
       <Footer />
       */} 
