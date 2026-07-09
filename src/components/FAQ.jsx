@@ -47,7 +47,7 @@ const FAQ = () => {
   return (
     <section className="py-24 w-full  relative px-5 lg:px-62">
       <div className="w-full text-center ">
-        <GlowHeaderBtn text={<>FAQ</>} additionalClassName="text-[50px]" />
+        <GlowHeaderBtn text={<>FAQ</>} />
 
         <div className="space-y-3 mt-10">
           {faqs.map((faq, idx) => (

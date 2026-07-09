@@ -37,11 +37,11 @@ const Services = () => {
   ];
 
   return (
-    <section className="pb-24 relative">
-      <div className="mx-auto w-full text-center px-4 lg:px-62">
+    <section className="pb-16 relative">
+      <div className="mx-auto w-full text-center px-5 lg:px-62">
         <GlowHeaderBtn text="Our Services" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-15">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
           {servicesList.map((service, idx) => (
             <div
               key={idx}
@@ -55,13 +55,13 @@ const Services = () => {
               />
               </div>
 
-              <div className="z-20 h-[55%] lg:h-1/2 w-full backdrop-blur-[5px]  flex flex-col py-3 px-8 text-center rounded-2xl">
+              <div className="z-20 h-[55%] lg:h-1/2 w-full backdrop-blur-[5px]  flex flex-col pt-2 pb-3 px-8 text-center ">
                 <h3 className="text-[22px] lg:text-[19px] font-bold text-white mb-2.5">
                   {service.title}
                 </h3>
                 <p className="text-slate-300 text-[18px] lg:text-[13px] mb-4.5 px-6 line-clamp-3">{service.desc}</p>
                 <div>
-                  <button className="px-5 py-2 rounded-full bg-white text-black lg:text-xs tracking-wider cursor-pointer  hover:bg-[#00B5B5] hover:text-white transition-colors font-medium">
+                  <button className="px-6.5 py-3 rounded-full bg-white text-black text-[14px] lg:text-xs tracking-wider cursor-pointer  hover:bg-[#00B5B5] hover:text-white transition-colors font-medium">
                     Book Your Call
                   </button>
                 </div>

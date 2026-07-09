@@ -26,13 +26,13 @@ const Advantages = () => {
         {/* Pixel-perfect badge for "Our Unfair Advantage" */}
         <div className="flex justify-center mb-8">
           <div
-            className="px-20 lg:px-12 py-3 lg:py-1.5"
+            className="px-20 lg:px-12 py-2.5 lg:py-1.5"
             style={{
               background:
                 "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 100%)",
             }}
           >
-            <span className="text-white text-[18px] lg:text-[16px] font-normal tracking-wide">
+            <span className="text-white text-[18px] lg:text-[16px] font-light tracking-wide">
               Our Unfair Advantage
             </span>
           </div>
@@ -43,27 +43,26 @@ const Advantages = () => {
             <>
               What We Provide
               <br className="block lg:hidden" />
-              That
-              <br className="hidden lg:block" />
+              That <br className="hidden lg:block" />
               Others Don't
             </>
           }
         />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-8 lg:mt-20 ">
           {/* Adv 1 */}
           {advantages.map((adv, idx) => {
             return (
               <div
                 key={adv.id}
-                className="flex flex-col items-center group px-8"
+                className="flex flex-col items-center group px-16 lg:px-8"
               >
-                <div className="text-[200px] md:text-[250px] font-black text-transparent bg-clip-text bg-linear-to-b from-white to-[#015E57] leading-none mb-1 group-hover:scale-110 transition-transform duration-500">
+                <div className="text-[160px] md:text-[250px] font-black text-transparent bg-clip-text bg-linear-to-b from-white to-[#015E57] leading-none mb-1 group-hover:scale-110 transition-transform duration-500">
                   {adv.id}
                 </div>
                 <h3 className="text-[22px] lg:text-[20px] font-bold text-white mb-1">
                   {adv.title}
                 </h3>
-                <p className="text-white/80 text-[18px] lg:text-[14px] leading-normal mx-auto line-clamp-4 lg:line-clamp-none">
+                <p className="text-white/80 text-[18px] lg:text-[14px] leading-normal mx-auto line-clamp-4 lg:line-clamp-none ">
                   {adv.desc}
                 </p>
               </div>

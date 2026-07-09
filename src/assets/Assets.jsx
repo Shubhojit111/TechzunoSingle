@@ -1,4 +1,5 @@
 import HeroBg from "../assets/HeroBg.png"
+import HeroBgMobile from "../assets/HeroBgMobile.png"
 import HeroFooter from "../assets/HeroFooter.png"
 import Portfolio1 from "../assets/Portfolio1.png"
 import Portfolio2 from "../assets/Portfolio2.png"
@@ -11,11 +12,13 @@ import Service5 from "../assets/Service5.png"
 import Service6 from "../assets/Service6.png"
 import ServiceCardMask from "../assets/ServiceCardMask.png"
 import CardBgGlass from "../assets/CardBgGlass.png"
-import TestimonialBg from "../assets/TestimonialBg.png"
+import PortfolioBg from "../assets/PortfolioBg.png"
 import TechzunoLogo from "../assets/TechzunoLogo.png"
+import G505 from "../assets/Group 505.png"
 
 const Assets = {
   HeroBg,
+  HeroBgMobile,
   HeroFooter,
   Portfolio1,
   Portfolio2,
@@ -28,8 +31,9 @@ const Assets = {
   Service6,
   ServiceCardMask,
   CardBgGlass,
-  TestimonialBg,
+  PortfolioBg,
   TechzunoLogo,
+  G505
 
 
 }
