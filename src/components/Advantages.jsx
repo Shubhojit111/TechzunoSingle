@@ -1,5 +1,6 @@
 import React from "react";
 import GlowHeaderBtn from "./GlowHeaderBtn";
+import BookYouCallBtn from "./BookYouCallBtn";
 
 const Advantages = () => {
   const advantages = [
@@ -70,9 +71,7 @@ const Advantages = () => {
           })}
         </div>
         <div className="mx-auto pt-16">
-          <button className="px-5 py-2 rounded-full bg-white text-black lg:text-xs tracking-wider cursor-pointer  hover:bg-[#00B5B5] hover:text-white transition-colors font-medium">
-            Book Your Call
-          </button>
+          <BookYouCallBtn />
         </div>
       </div>
     </section>

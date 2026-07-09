@@ -61,9 +61,7 @@ const Services = () => {
                 </h3>
                 <p className="text-slate-300 text-[18px] lg:text-[13px] mb-4.5 px-6 line-clamp-3">{service.desc}</p>
                 <div>
-                  <button className="px-6.5 py-3 rounded-full bg-white text-black text-[14px] lg:text-xs tracking-wider cursor-pointer  hover:bg-[#00B5B5] hover:text-white transition-colors font-medium">
-                    Book Your Call
-                  </button>
+                  
                 </div>
               </div>
             </div>
