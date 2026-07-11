@@ -134,7 +134,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`fixed inset-0 z-40 bg-gradient-to-b from-[#000A0B]/98 via-[#041517]/98 to-black/99 backdrop-blur-2xl md:hidden transition-all duration-300 flex flex-col justify-between px-6 pt-28 pb-10 ${
+        className={`fixed inset-0 z-40 bg-linear-to-b from-[#000A0B]/98 via-[#041517]/98 to-black/99 backdrop-blur-2xl md:hidden transition-all duration-300 flex flex-col justify-between px-6 pt-28 pb-10 ${
           isMenuOpen
             ? "opacity-100 pointer-events-auto translate-y-0"
             : "opacity-0 pointer-events-none -translate-y-5"
